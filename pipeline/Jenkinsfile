@@ -6,14 +6,14 @@ pipeline {
                 git url: 'https://github.com/senHou/calculator.git', branch: 'main'
             }
         }
-        stage("Compile") {
+        stage("Build") {
             steps {
-                sh "./mvn compile"
+                sh "mvn clean install"
             }
         }
         stage("Test") {
             steps {
-                sh "./mvn test"
+                sh "mvn test"
             }
         }
     }
