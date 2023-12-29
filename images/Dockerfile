@@ -3,9 +3,6 @@ FROM jenkins/agent
 USER root
 
 RUN apt-get update \
-    && apt-get install -y openjdk-17-jre
-
-RUN apt-get update \
   && apt-get install -y ca-certificates curl git --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
